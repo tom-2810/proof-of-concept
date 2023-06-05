@@ -1,7 +1,10 @@
-> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
+![schiphol_logo](https://github.com/tom-2810/proof-of-concept/assets/112861614/375d0cef-b96c-48f5-8d73-f392ae194132)
 
-# Titel
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
+# Schiphol
+
+Mijn opdrachtgever voor de komende drie weken is Schiphol.
+
+https://www.schiphol.nl/nl/
 
 ## Inhoudsopgave
 
