@@ -1,0 +1,113 @@
+/*
+===============================
+✨ VARIABLES
+===============================
+*/
+
+:root {
+    --default-width: 95vw;
+    --max-width: 95rem;
+
+    --small-size: .5rem;
+    --medium-size: 1.2rem;
+    --large-size: 1.7rem;
+    --xlarge-size: 3rem;
+    --xxlarge-size: 8rem;
+
+    --c-background: #fff;
+    --c-container: #cdcdcd;
+
+    --container-border: 1px solid var(--c-container);
+}
+
+/*
+===============================
+💪 DEFAULT STYLING
+===============================
+*/
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: var(--small-size) 0;
+    background-color: var(--c-background);
+    border-bottom: var(--container-border);
+    z-index: 2;
+}
+
+main {
+    /* display: flex;
+    justify-content: center; */
+    width: 100%;
+    height: fit-content;
+    background-color: var(--c-background);
+}
+
+.js-disabled {
+    display: none;
+}
+
+/*
+===============================
+🧩 PARTIALS
+===============================
+*/
+
+/* Header */
+
+header nav {
+    display: flex;
+    align-items: center;
+    width: var(--default-width);
+    max-width: var(--max-width);
+}
+
+/* Dashboard */
+
+.dashboard {
+    position: relative;
+    height: 100dvh;
+}
+
+#list-map-switch {
+    position: absolute;
+    bottom: 0;
+
+    z-index: 2;
+}
+
+#list, .map {
+    position: absolute;
+    width: 100dvw;
+    height: 100dvh;
+}
+
+/* List */
+
+#list {
+    background-color: red;
+}
+
+.dashboard #list {
+    transform: translateX(-100%);
+    transition: 1s;
+    z-index: 1;
+}
+
+.dashboard #list.open-list {
+    transform: translateX(0);
+}
+
+/* Map */
+
+.map {
+    background-color: aqua;
+}

@@ -1,0 +1,32 @@
+{
+  "name": "proof-of-concept",
+  "version": "1.0.0",
+  "description": "Schiphol Flight Dashboard",
+  "type": "module",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tom-2810/proof-of-concept.git"
+  },
+  "author": "Tom Poortman (tom.poortman@hva.nl)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tom-2810/proof-of-concept/issues"
+  },
+  "homepage": "https://github.com/tom-2810/proof-of-concept#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
