@@ -37,7 +37,7 @@ header {
     display: flex;
     justify-content: center;
     width: 100%;
-    padding: var(--small-size) 0;
+    height: var(--xlarge-size);
     background-color: var(--c-background);
     border-bottom: var(--container-border);
     z-index: 2;
@@ -49,10 +49,6 @@ main {
     width: 100%;
     height: fit-content;
     background-color: var(--c-background);
-}
-
-.js-disabled {
-    display: none;
 }
 
 /*
@@ -70,10 +66,20 @@ header nav {
     max-width: var(--max-width);
 }
 
+header nav img {
+    height: var(--large-size);
+}
+
 /* Dashboard */
 
 .dashboard {
+    /* display: grid;
+    grid-template-columns: 1fr 2.5fr; */
+
+    display: flex;
+    flex-direction: row;
     position: relative;
+    padding-top: var(--xlarge-size);
     height: 100dvh;
 }
 
@@ -84,10 +90,13 @@ header nav {
     z-index: 2;
 }
 
-#list, .map {
+#list, #map {
+    /* position: relative; */
     position: absolute;
+    bottom: 0;
+    /* width: ; */
     width: 100dvw;
-    height: 100dvh;
+    height: calc(100dvh - var(--xlarge-size));
 }
 
 /* List */
@@ -97,17 +106,22 @@ header nav {
 }
 
 .dashboard #list {
-    transform: translateX(-100%);
-    transition: 1s;
     z-index: 1;
-}
-
-.dashboard #list.open-list {
-    transform: translateX(0);
 }
 
 /* Map */
 
-.map {
+#map {
     background-color: aqua;
 }
+
+.dashboard #map {
+    display: none;
+}
+
+/*
+===============================
+🖥️ QUERIES
+===============================
+*/
+
