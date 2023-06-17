@@ -1,3 +1,5 @@
+@import url(tokens.css);
+
 /*
 ===============================
 ✨ VARIABLES
@@ -13,6 +15,10 @@
     --large-size: 1.7rem;
     --xlarge-size: 3rem;
     --xxlarge-size: 8rem;
+
+    --small-radius: 5px;
+    --medium-radius: 10px;
+    --large-radius: 20px;
 
     --c-background: #fff;
     --c-container: #cdcdcd;
@@ -52,7 +58,7 @@ main {
 }
 
 .js-disabled {
-    display: none;
+    display: none !important;
 }
 
 /*
@@ -87,14 +93,41 @@ header nav img {
     height: 100dvh;
 }
 
+.dashboard :is(#list, #map) {
+    transition: all .1s, width 0s, height 0s;
+}
+
 #list-map-switch {
     position: absolute;
     bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 
     z-index: 2;
 }
 
-#list, #map {
+#list-map-switch :is(button, a) {
+    display: flex;
+    align-items: center;
+    gap: var(--small-size);
+    padding: var(--small-size);
+    background-color: var(--sds-pax-color-brand-50);
+    color: var(--sds-pax-color-brand-150);
+    text-decoration: none;
+    cursor: pointer;
+
+    
+    border-radius: var(--small-radius) var(--small-radius) 0 0;
+    border: none;
+}
+
+.dashboard #list-map-switch button[aria-expanded="true"] .bullet, #list-map-switch a.map .bullet {
+    background-color: var(--sds-pax-color-accent-350);
+    transform: translateX(-1.5rem);
+}
+
+#list,
+#map {
     /* position: relative; */
     position: absolute;
     bottom: 0;
@@ -112,7 +145,6 @@ header nav img {
 .dashboard #list {
     visibility: hidden;
     transform: translateX(-100%);
-    transition: .3s;
     z-index: 1;
 }
 
@@ -129,12 +161,32 @@ header nav img {
 
 .dashboard #map {
     visibility: hidden;
-    transition: .3s;
-
 }
 
-.dashboard #list:not(.open-list) ~ #map {
+.dashboard #list:not(.open-list)~#map {
     visibility: visible;
+}
+
+/* Switch */
+
+.switch {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    width: 3rem;
+    height: 1.5rem;
+    padding: .25rem;
+    border-radius: var(--large-radius);
+    background-color: var(--sds-pax-color-brand-150);
+}
+
+.switch .bullet {
+    height: 100%;
+    /* margin-left: 0; */
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    transition: .3s;
+    background-color: var(--sds-pax-color-wayfinding-50);
 }
 
 /*
@@ -142,4 +194,3 @@ header nav img {
 🖥️ QUERIES
 ===============================
 */
-

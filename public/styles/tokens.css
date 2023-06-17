@@ -1,0 +1,161 @@
+:root {
+    --sds-pax-color-brand-50: #141251; /* schiphol-blue / schiphol-blauw */
+    --sds-pax-color-brand-150: #ffffff; /* white / wit */
+    --sds-pax-color-accent-50: #1b60db; /* afternoon-blue / middag-blauw */
+    --sds-pax-color-accent-150: #94b0ea; /* lightmorning-blue / middag-lichtblauw */
+    --sds-pax-color-accent-250: #ff8fb2; /* lightmorning-pink / ochtend-lichtroze */
+    --sds-pax-color-accent-350: #aa3191; /* morning-pink / ochtend-roze */
+    --sds-pax-color-accent-450: #027e9b; /* dusk-green / schemer-groen */
+    --sds-pax-color-accent-550: #4cbfe0; /* dusk-blue / schemer-blauw */
+    --sds-pax-color-accent-650: #6552a8; /* evening-pink / avond-paars */
+    --sds-pax-color-accent-750: #d285d6; /* evening-lilac / avond-lila */
+    --sds-pax-color-neutral-50: #706a8a; /* grey-storm */
+    --sds-pax-color-neutral-60: #948fa7; /* grey-overcast / Wolkengrijs_1 */
+    --sds-pax-color-neutral-70: #c0becc; /* grey-broken / Wolkengrijs_2 */
+    --sds-pax-color-neutral-80: #e9e8ed; /* grey-scattered / Wolkengrijs_3 */
+    --sds-pax-color-neutral-90: #f2f1f4; /* grey-few / Wolkengrijs_4 */
+    --sds-pax-color-neutral-150: #f3f7fd; /* blue-few */
+    --sds-pax-color-signal-50: #d0021b; /* dark-red */
+    --sds-pax-color-signal-60: #d93146; /* calamity-red */
+    --sds-pax-color-signal-150: #128a0b; /* green */
+    --sds-pax-color-wayfinding-50: #fdc52e; /* mijksenaar-yellow / mijksenaar-geel */
+    --sds-pax-color-wayfinding-150: #17170e; /* mijksenaar-black / mijksenaar-zwart */
+    --sds-pax-color-text-primary: #141251; /* This is the default color used for all text elements */
+    --sds-pax-color-background-primary: #ffffff; /* This is the default color used for all backgrounds */
+    --sds-pax-color-gradient-50: 135deg,#141251 10.25%,#aa3191 47.78%,#ff8fb2 87.19%; /* gradient-pink */
+    --sds-pax-color-gradient-150: 135deg,#141251 10.25%,#1b60db 47.78%,#94b0ea 87.19%; /* gradient-blue */
+    --sds-pax-color-gradient-250: 135deg,#1b60db 0%,#aa3191 100%; /* gradient-purple */
+    --sds-pax-color-gradient-350: 135deg,#141251 0%,#46aee5 100%; /* gradient-parking-blue */
+    --sds-pax-color-gradient-450: 135deg,#035072 0%,#8bdcc9 100%; /* gradient-privium-green */
+    --sds-pax-color-gradient-550: 135deg,#546294 0%,#817eaa 10.25%,#b67745 47.78%; /* gradientvvr */
+    --sds-pax-color-gradient-pink: 135deg,#141251 10.25%,#aa3191 47.78%,#ff8fb2 87.19%; /* gradient-pink */
+    --sds-pax-color-gradient-blue: 135deg,#141251 10.25%,#1b60db 47.78%,#94b0ea 87.19%; /* gradient-blue */
+    --sds-pax-color-gradient-purple: 135deg,#1b60db 0%,#aa3191 100%; /* gradient-purple */
+    --sds-pax-color-gradient-parking-blue: 135deg,#141251 0%,#46aee5 100%; /* gradient-parking-blue */
+    --sds-pax-color-gradient-privium-green: 135deg,#035072 0%,#8bdcc9 100%; /* gradient-privium-green */
+    --sds-pax-color-gradient-vvr: 135deg,#546294 0%,#817eaa 10.25%,#b67745 47.78%; /* gradientvvr */
+    --sds-pax-size-0: 0rem; /* 0px / 0rem */
+    --sds-pax-size-10: 0.0625rem; /* 1px / 0.0625rem */
+    --sds-pax-size-20: 0.125rem; /* 2px / 0.125rem */
+    --sds-pax-size-30: 0.25rem; /* 4px / 0.25rem */
+    --sds-pax-size-40: 0.5rem; /* 8px / 0.5rem */
+    --sds-pax-size-50: 0.75rem; /* 12px / 0.75rem */
+    --sds-pax-size-60: 1rem; /* 16px / 1rem */
+    --sds-pax-size-70: 1.25rem; /* 20px / 1.25rem */
+    --sds-pax-size-80: 1.5rem; /* 24px / 1.5rem */
+    --sds-pax-size-90: 1.75rem; /* 28px / 1.75rem */
+    --sds-pax-size-100: 2rem; /* 32px / 2rem */
+    --sds-pax-size-110: 2.25rem; /* 36px / 2.25rem */
+    --sds-pax-size-120: 2.5rem; /* 40px / 2.5rem */
+    --sds-pax-size-130: 2.75rem; /* 44px / 2.75rem */
+    --sds-pax-size-140: 3rem; /* 48px / 3rem */
+    --sds-pax-size-150: 3.25rem; /* 52px / 3.25rem */
+    --sds-pax-size-160: 3.5rem; /* 56px / 3.5rem */
+    --sds-pax-size-170: 3.75rem; /* 60px / 3.75rem */
+    --sds-pax-size-180: 4rem; /* 64px / 4rem */
+    --sds-pax-size-190: 4.25rem; /* 68px / 4.25rem */
+    --sds-pax-size-200: 4.5rem; /* 72px / 4.5rem */
+    --sds-pax-size-210: 4.75rem; /* 76px / 4.75rem */
+    --sds-pax-size-220: 5rem; /* 80px / 5rem */
+    --sds-pax-size-230: 5.25rem; /* 84px / 5.25rem */
+    --sds-pax-size-240: 5.5rem; /* 88px / 5.5rem */
+    --sds-pax-size-250: 5.75rem; /* 92px / 5.75rem */
+    --sds-pax-size-260: 6rem; /* 96px / 6rem */
+    --sds-pax-size-270: 6.25rem; /* 100px / 6.25rem */
+    --sds-pax-size-280: 6.5rem; /* 104px / 6.5rem */
+    --sds-pax-size-290: 6.75rem; /* 108px / 6.75rem */
+    --sds-pax-size-300: 7rem; /* 112px / 7rem */
+    --sds-pax-size-310: 7.25rem; /* 116px / 7.25rem */
+    --sds-pax-size-320: 7.5rem; /* 120px / 7.5rem */
+    --sds-pax-size-330: 7.75rem; /* 124px / 7.75rem */
+    --sds-pax-size-340: 8rem; /* 128px / 8rem */
+    --sds-pax-size-350: 8.25rem; /* 132px / 8.25rem */
+    --sds-pax-size-360: 8.5rem; /* 136px / 8.5rem */
+    --sds-pax-size-370: 8.75rem; /* 140px / 8.75rem */
+    --sds-pax-size-380: 9rem; /* 144px / 9rem */
+    --sds-pax-size-390: 9.25rem; /* 148px / 9.25rem */
+    --sds-pax-size-400: 9.5rem; /* 152px / 9.5rem */
+    --sds-pax-size-410: 9.75rem; /* 156px / 9.75rem */
+    --sds-pax-size-420: 10rem; /* 160px / 10rem */
+    --sds-pax-size-430: 10.25rem; /* 164px / 10.25rem */
+    --sds-pax-size-440: 10.5rem; /* 168px / 10.5rem */
+    --sds-pax-size-450: 10.75rem; /* 172px / 10.75rem */
+    --sds-pax-size-460: 11rem; /* 176px / 11rem */
+    --sds-pax-size-470: 11.25rem; /* 180px / 11.25rem */
+    --sds-pax-size-480: 11.5rem; /* 184px / 11.5rem */
+    --sds-pax-size-490: 11.75rem; /* 188px / 11.75rem */
+    --sds-pax-size-500: 12rem; /* 192px / 12rem */
+    --sds-pax-size-510: 12.25rem; /* 196px / 12.25rem */
+    --sds-pax-size-520: 12.5rem; /* 200px / 12.5rem */
+    --sds-pax-size-530: 12.75rem; /* 204px / 12.75rem */
+    --sds-pax-size-540: 13rem; /* 208px / 13rem */
+    --sds-pax-size-550: 13.25rem; /* 212px / 13.25rem */
+    --sds-pax-size-560: 13.5rem; /* 216px / 13.5rem */
+    --sds-pax-size-570: 13.75rem; /* 220px / 13.75rem */
+    --sds-pax-size-580: 14rem; /* 224px / 14rem */
+    --sds-pax-size-590: 14.25rem; /* 228px / 14.25rem */
+    --sds-pax-size-600: 14.5rem; /* 232px / 14.5rem */
+    --sds-pax-size-610: 14.75rem; /* 236px / 14.75rem */
+    --sds-pax-size-620: 15rem; /* 240px / 15rem */
+    --sds-pax-size-630: 15.25rem; /* 244px / 15.25rem */
+    --sds-pax-size-640: 15.5rem; /* 248px / 15.5rem */
+    --sds-pax-size-650: 15.75rem; /* 252px / 15.75rem */
+    --sds-pax-size-660: 16rem; /* 256px / 16rem */
+    --sds-pax-size-670: 16.25rem; /* 260px / 16.25rem */
+    --sds-pax-size-680: 16.5rem; /* 264px / 16.5rem */
+    --sds-pax-size-690: 16.75rem; /* 268px / 16.75rem */
+    --sds-pax-size-700: 17rem; /* 272px / 17rem */
+    --sds-pax-size-710: 17.25rem; /* 276px / 17.25rem */
+    --sds-pax-size-720: 17.5rem; /* 280px / 17.5rem */
+    --sds-pax-size-730: 17.75rem; /* 284px / 17.75rem */
+    --sds-pax-size-740: 18rem; /* 288px / 18rem */
+    --sds-pax-size-750: 18.25rem; /* 292px / 18.25rem */
+    --sds-pax-size-760: 18.5rem; /* 296px / 18.5rem */
+    --sds-pax-size-770: 18.75rem; /* 300px / 18.75rem */
+    --sds-pax-size-780: 19rem; /* 304px / 19rem */
+    --sds-pax-size-790: 19.25rem; /* 308px / 19.25rem */
+    --sds-pax-size-800: 19.5rem; /* 312px / 19.5rem */
+    --sds-pax-size-810: 19.75rem; /* 316px / 19.75rem */
+    --sds-pax-size-820: 20rem; /* 320px / 20rem */
+    --sds-pax-size-830: 20.25rem; /* 324px / 20.25rem */
+    --sds-pax-size-840: 20.5rem; /* 328px / 20.5rem */
+    --sds-pax-size-850: 20.75rem; /* 332px / 20.75rem */
+    --sds-pax-size-860: 21rem; /* 336px / 21rem */
+    --sds-pax-size-870: 21.25rem; /* 340px / 21.25rem */
+    --sds-pax-size-880: 21.5rem; /* 344px / 21.5rem */
+    --sds-pax-size-890: 21.75rem; /* 348px / 21.75rem */
+    --sds-pax-size-900: 22rem; /* 352px / 22rem */
+    --sds-pax-size-910: 22.25rem; /* 356px / 22.25rem */
+    --sds-pax-size-920: 22.5rem; /* 360px / 22.5rem */
+    --sds-pax-size-930: 22.75rem; /* 364px / 22.75rem */
+    --sds-pax-size-940: 23rem; /* 368px / 23rem */
+    --sds-pax-size-950: 23.25rem; /* 372px / 23.25rem */
+    --sds-pax-size-960: 23.5rem; /* 376px / 23.5rem */
+    --sds-pax-size-970: 23.75rem; /* 380px / 23.75rem */
+    --sds-pax-size-980: 24rem; /* 384px / 24rem */
+    --sds-pax-size-990: 24.25rem; /* 388px / 24.25rem */
+    --sds-pax-size-1000: 24.5rem; /* 392px / 24.5rem */
+    --sds-pax-size-1010: 24.75rem; /* 396px / 24.75rem */
+    --sds-pax-size-1020: 25rem; /* 400px / 25rem */
+    --sds-pax-font-size-h1-desktop: 3.518rem; /* 56.29px / 3.518rem */
+    --sds-pax-font-size-h1-mobile: 2.66rem; /* 42.56px / 2.66rem */
+    --sds-pax-font-size-h2-desktop: 1.749rem; /* 27.98px / 1.749rem */
+    --sds-pax-font-size-h2-mobile: 1.521rem; /* 24.33px / 1.521rem */
+    --sds-pax-font-size-h3-desktop: 1.322rem; /* 21.16px / 1.322rem */
+    --sds-pax-font-size-h3-mobile: 1.15rem; /* 18.40px / 1.15rem */
+    --sds-pax-font-size-h4: 1rem; /* 16px / 1.0rem */
+    --sds-pax-font-size-text-xl: 1.322rem; /* 21.16px / 1.322rem */
+    --sds-pax-font-size-text-l: 1.15rem; /* 18.40px / 1.15rem */
+    --sds-pax-font-size-text-m: 1rem; /* 16px / 1.0rem */
+    --sds-pax-font-size-text-s: 0.87rem; /* 13.91px / 0.87rem */
+    --sds-pax-line-height-h1: 110%;
+    --sds-pax-line-height-h2: 125%;
+    --sds-pax-line-height-h3: 125%;
+    --sds-pax-line-height-h4: 125%;
+    --sds-pax-line-height-h5: 125%;
+    --sds-pax-line-height-text: 150%;
+    --sds-pax-font-family-world: Frutiger Neue LT Com;
+    --sds-pax-font-weight-text: 350;
+    --sds-pax-font-weight-text-bold: 700;
+    --sds-pax-font-weight-headings: 725;
+  }

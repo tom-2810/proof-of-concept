@@ -15,8 +15,8 @@ if (window.location.pathname == "/") {
         listComponent.classList.contains('open-list') ? 
         listMapSwitchButton.ariaExpanded = true : 
         listMapSwitchButton.ariaExpanded = false;
-        if(listMapSwitchButton.ariaExpanded = true) {
-            setTimeout(function() {listComponent.querySelector('input').focus()}, 350);
+        if(listMapSwitchButton.getAttribute('aria-expanded') === 'true') {
+            setTimeout(function() {listComponent.querySelector('input').focus()}, 180);
         }
     })
 } else {

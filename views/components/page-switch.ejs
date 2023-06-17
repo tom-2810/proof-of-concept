@@ -1,11 +1,23 @@
 <div id="list-map-switch">
-    <a aria-label="open <%= locals.toPage %>" href=
-    <% if (locals.toPage) { %>
-        <%= locals.toPage %>
-        <% } else { %>
-            "map"
-            <% } %>
-    >list / map</a>
 
-    <button aria-label="List menu" aria-expanded="true" class="js-disabled">List / Map</button>
+    <a class="<%= locals.toPage %>" aria-label="open <%= locals.toPage %>" href=<% if (locals.toPage) { %>
+        <%= locals.toPage %>
+            <% } else { %>
+                "list"
+                <% } %>
+                    >List
+                    <div class="switch">
+                        <div class="bullet"></div>
+                    </div>
+                    Map
+
+    </a>
+
+    <button aria-label="List menu" aria-expanded="false" class="js-disabled">
+        List
+        <div class="switch">
+            <div class="bullet"></div>
+        </div>
+        Map
+    </button>
 </div>
