@@ -1,7 +1,18 @@
 import express, { json, request, response } from 'express'
 
+import IATA from './IATA.json' assert { type: "json" }
+
+const schiphol = IATA.filter(obj => {
+  return obj.iata === "AMS"
+});
+
 // Maak een nieuwe express app
 const app = express()
+
+const coordinates = {
+  schiphol: schiphol[0],
+  OtherAirport: ""
+}
 
 // Stel in hoe we express gebruiken
 app.set('view engine', 'ejs')
@@ -14,7 +25,7 @@ app.use(express.urlencoded({ extended: true }))
 
 // Maak een route voor de index
 app.get('/', (request, response) => {
-    response.render('pages/index', { active: '/' })
+  response.render('pages/index', { active: '/', coordinates: coordinates })
 })
 
 // Maak een route voor de list

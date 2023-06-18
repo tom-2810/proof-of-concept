@@ -116,12 +116,13 @@ header nav img {
     text-decoration: none;
     cursor: pointer;
 
-    
+
     border-radius: var(--small-radius) var(--small-radius) 0 0;
     border: none;
 }
 
-.dashboard #list-map-switch button[aria-expanded="true"] .bullet, #list-map-switch a.map .bullet {
+.dashboard #list-map-switch button[aria-expanded="true"] .bullet,
+#list-map-switch a.map .bullet {
     background-color: var(--sds-pax-color-accent-350);
     transform: translateX(-1.5rem);
 }
