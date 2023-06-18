@@ -6,12 +6,16 @@ const schiphol = IATA.filter(obj => {
   return obj.iata === "AMS"
 });
 
+const otherAirport = IATA.filter(obj => {
+  return obj.iata === "LEY"
+});
+
 // Maak een nieuwe express app
 const app = express()
 
 const coordinates = {
   schiphol: schiphol[0],
-  OtherAirport: ""
+  otherAirport: otherAirport[0]
 }
 
 // Stel in hoe we express gebruiken

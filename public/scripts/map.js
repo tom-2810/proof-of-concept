@@ -1,9 +1,9 @@
 const schipholAirport = JSON.parse(schiphol);
-const secondaryAirport = ""
+const secondaryAirport = JSON.parse(otherAirport);
 
 
 const schipholCoordinates = [schipholAirport.latitude, schipholAirport.longitude]
-const secondaryCoordinates = [51.470020, -0.454295]
+const secondaryCoordinates = [secondaryAirport.latitude, secondaryAirport.longitude]
 
 var map = L.map('map').setView(secondaryCoordinates, 7);
 
@@ -15,7 +15,7 @@ secondaryMarker.bindPopup(`Bestemming: ${secondaryCoordinates.toString()}`).open
 
 var myLines = [{
     "type": "LineString",
-    "coordinates": [[4.764167, 52.308056], [-0.454295, 51.470020]]
+    "coordinates": [[secondaryAirport.longitude, secondaryAirport.latitude], [schipholAirport.longitude, schipholAirport.latitude]]
 }];
 
 L.geoJSON(myLines, {
