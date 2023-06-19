@@ -11,7 +11,7 @@ var schipholMarker = L.marker(schipholCoordinates).addTo(map);
 var secondaryMarker = L.marker(secondaryCoordinates).addTo(map);
 
 
-secondaryMarker.bindPopup(`Bestemming: ${secondaryCoordinates.toString()}`).openPopup();
+secondaryMarker.bindPopup(`Airport: ${secondaryAirport.airport}. Coordinates: ${secondaryCoordinates.toString()}`).openPopup();
 
 var myLines = [{
     "type": "LineString",

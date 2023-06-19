@@ -1,13 +1,13 @@
 import express, { json, request, response } from 'express'
 
-import IATA from './IATA.json' assert { type: "json" }
+import IATA from "./IATA.js";
 
 const schiphol = IATA.filter(obj => {
   return obj.iata === "AMS"
 });
 
 const otherAirport = IATA.filter(obj => {
-  return obj.iata === "LEY"
+  return obj.iata === "CPQ"
 });
 
 // Maak een nieuwe express app

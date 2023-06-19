@@ -1,3 +1,4 @@
+export default
 [
     {
       "country_code": "AE",
