@@ -113,19 +113,17 @@ header nav img {
     align-items: center;
     gap: var(--small-size);
     padding: var(--small-size);
-    background-color: var(--sds-pax-color-brand-50);
+    background-color: var(--sds-pax-color-accent-50);
     color: var(--sds-pax-color-brand-150);
     text-decoration: none;
     cursor: pointer;
 
-
-    border-radius: var(--small-radius) var(--small-radius) 0 0;
+    border-radius: var(--medium-radius) var(--medium-radius) 0 0;
     border: none;
 }
 
 .dashboard #list-map-switch button[aria-expanded="true"] .bullet,
 #list-map-switch a.map .bullet {
-    background-color: var(--sds-pax-color-accent-350);
     transform: translateX(-1.5rem);
 }
 
@@ -245,18 +243,17 @@ header nav img {
     position: relative;
     width: 3rem;
     height: 1.5rem;
-    padding: .25rem;
+    padding: .2rem;
     border-radius: var(--large-radius);
-    background-color: var(--sds-pax-color-brand-150);
+    border: 2px solid var(--sds-pax-color-brand-150);
 }
 
 .switch .bullet {
     height: 100%;
-    /* margin-left: 0; */
     aspect-ratio: 1/1;
     border-radius: 50%;
     transition: .1s;
-    background-color: red;
+    background-color: var(--sds-pax-color-brand-150);
 }
 
 /*

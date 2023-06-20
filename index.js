@@ -1,22 +1,37 @@
 import express, { json, request, response } from 'express'
+import { Server } from 'socket.io'
+import { createServer, get } from 'http'
 
+// IATA data over vlieghavens met hun coordinaten
 import IATA from "./IATA.js";
+
+
+
+const schiphol_api = 'https://api.wheretheiss.at/v1/satellites/25544'
+
+
+
+
+
 
 const departureAirport = IATA.filter(obj => {
   return obj.iata === "AMS"
 });
 
 const arrivalAirport = IATA.filter(obj => {
-  return obj.iata === "AYM"
+  return obj.iata === "AGP"
 });
-
-// Maak een nieuwe express app
-const app = express()
 
 const coordinates = {
   departureAirport: departureAirport[0],
   arrivalAirport: arrivalAirport[0]
 }
+
+// Maak een nieuwe express app
+const app = express()
+const http = createServer(app)
+const ioServer = new Server(http)
+const port = process.env.PORT || 8000
 
 // Stel in hoe we express gebruiken
 app.set('view engine', 'ejs')
@@ -42,8 +57,27 @@ app.get('/map', (request, response) => {
   response.render('pages/map-page', { active: '/map' })
 })
 
-// Stel het poortnummer in en start express
-app.set('port', process.env.PORT || 8000)
-app.listen(app.get('port'), function () {
-  console.log(`Application started on http://localhost:${app.get('port')}`)
+// function updateFlights() {
+//   // Verstuur het bericht naar alle clients
+//   ioServer.emit('update-flights', { flightsData: " terug" })
+// }
+
+// updateFlights()
+
+// setInterval(updateFlights, 2000)
+
+async function getFlights() {
+  const responseFlights = await fetch(schiphol_api)
+  const data = await responseFlights.json()
+
+  ioServer.emit('update-flights', { data })
+}
+
+getFlights()
+
+setInterval(getFlights, 5000)
+
+// Start een http server op het ingestelde poortnummer en log de url
+http.listen(port, () => {
+  console.log('listening on http://localhost:' + port)
 })
