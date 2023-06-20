@@ -1,28 +1,30 @@
-const schipholAirport = JSON.parse(schiphol);
-const secondaryAirport = JSON.parse(otherAirport);
+const departureAirport = JSON.parse(departure);
+const arrivalAirport = JSON.parse(arrival);
 
 
-const schipholCoordinates = [schipholAirport.latitude, schipholAirport.longitude]
-const secondaryCoordinates = [secondaryAirport.latitude, secondaryAirport.longitude]
+const departureAirportCoordinates = [departureAirport.latitude, departureAirport.longitude]
+const arrivalAirportCoordinates = [arrivalAirport.latitude, arrivalAirport.longitude]
 
-var map = L.map('map').setView(secondaryCoordinates, 7);
+var map = L.map('map').setView(arrivalAirportCoordinates, 5);
 
-var schipholMarker = L.marker(schipholCoordinates).addTo(map);
-var secondaryMarker = L.marker(secondaryCoordinates).addTo(map);
+var departureAirportMarker = L.marker(departureAirportCoordinates).addTo(map);
+var arrivalAirportMarker = L.marker(arrivalAirportCoordinates).addTo(map);
 
+arrivalAirportMarker._icon.classList.add("arrivalAirportMarker");
 
-secondaryMarker.bindPopup(`Airport: ${secondaryAirport.airport}. Coordinates: ${secondaryCoordinates.toString()}`).openPopup();
+departureAirportMarker.bindPopup(`Airport: ${departureAirport.airport}. Coordinates: ${departureAirportCoordinates.toString()}`).openPopup();
+arrivalAirportMarker.bindPopup(`Airport: ${arrivalAirport.airport}. Coordinates: ${arrivalAirportCoordinates.toString()}`).openPopup();
 
 var myLines = [{
     "type": "LineString",
-    "coordinates": [[secondaryAirport.longitude, secondaryAirport.latitude], [schipholAirport.longitude, schipholAirport.latitude]]
+    "coordinates": [[arrivalAirport.longitude, arrivalAirport.latitude], [departureAirport.longitude, departureAirport.latitude]]
 }];
 
 L.geoJSON(myLines, {
     style: {
         "color": "var(--sds-pax-color-signal-50)",
-        "weight": 4,
-        "opacity": .9
+        "weight": 2,
+        "opacity": .8
     }
 }).addTo(map);
 

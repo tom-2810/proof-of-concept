@@ -61,6 +61,8 @@ main {
     display: none !important;
 }
 
+.arrivalAirportMarker { filter: hue-rotate(149deg) saturate(1.5); }
+
 /*
 ===============================
 🧩 PARTIALS

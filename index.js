@@ -2,20 +2,20 @@ import express, { json, request, response } from 'express'
 
 import IATA from "./IATA.js";
 
-const schiphol = IATA.filter(obj => {
+const departureAirport = IATA.filter(obj => {
   return obj.iata === "AMS"
 });
 
-const otherAirport = IATA.filter(obj => {
-  return obj.iata === "CPQ"
+const arrivalAirport = IATA.filter(obj => {
+  return obj.iata === "AYM"
 });
 
 // Maak een nieuwe express app
 const app = express()
 
 const coordinates = {
-  schiphol: schiphol[0],
-  otherAirport: otherAirport[0]
+  departureAirport: departureAirport[0],
+  arrivalAirport: arrivalAirport[0]
 }
 
 // Stel in hoe we express gebruiken
