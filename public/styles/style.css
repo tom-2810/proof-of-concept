@@ -16,7 +16,7 @@
     --xlarge-size: 3rem;
     --xxlarge-size: 8rem;
 
-    --small-radius: 5px;
+    --small-radius: 3px;
     --medium-radius: 10px;
     --large-radius: 20px;
 
@@ -142,7 +142,8 @@ header nav img {
 /* List */
 
 #list {
-    background-color: red;
+    background-color: var(--c-background);
+    padding: var(--sds-pax-size-50);
 }
 
 .dashboard #list {
@@ -154,6 +155,71 @@ header nav img {
 .dashboard #list.open-list {
     visibility: visible !important;
     transform: translateX(0) !important;
+}
+
+/* Flight cards */
+
+.flights {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sds-pax-size-50);
+}
+
+.flights .flight {
+    position: relative;
+    border-radius: var(--small-radius);
+    border: var(--container-border);
+    padding: var(--sds-pax-size-50);
+
+}
+
+.flights .flight .content {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.flights .flight > a:after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.flights .flight .content > div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sds-pax-size-50);
+}
+
+.flights .flight .information {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flights .flight .content a {
+    position: relative;
+    z-index: 2;
+}
+
+.flights .flight .options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flights .flight .content .status {
+    width: fit-content;
+    padding: var(--sds-pax-size-30) var(--sds-pax-size-40);
+    border-radius: var(--small-radius);
+    background-color: rgb(255, 240, 26);
 }
 
 /* Map */
@@ -190,7 +256,7 @@ header nav img {
     aspect-ratio: 1/1;
     border-radius: 50%;
     transition: .1s;
-    background-color: var(--sds-pax-color-wayfinding-50);
+    background-color: red;
 }
 
 /*

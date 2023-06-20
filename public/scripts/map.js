@@ -5,7 +5,7 @@ const arrivalAirport = JSON.parse(arrival);
 const departureAirportCoordinates = [departureAirport.latitude, departureAirport.longitude]
 const arrivalAirportCoordinates = [arrivalAirport.latitude, arrivalAirport.longitude]
 
-var map = L.map('map').setView(arrivalAirportCoordinates, 5);
+var map = L.map('map').setView(arrivalAirportCoordinates, 4);
 
 var departureAirportMarker = L.marker(departureAirportCoordinates).addTo(map);
 var arrivalAirportMarker = L.marker(arrivalAirportCoordinates).addTo(map);
