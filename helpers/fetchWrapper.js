@@ -1,3 +1,5 @@
+import fetch from "node-fetch";
+
 /**
  * Wraps the fetch api and returns the response body parsed through json
  * @param {*} url the api endpoint to address
