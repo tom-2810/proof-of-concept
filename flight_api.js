@@ -1,4 +1,4 @@
-import http from 'https'
+var http = require("https");
 
 var options = {
   "method": "GET",

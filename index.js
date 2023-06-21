@@ -12,21 +12,6 @@ const schiphol_api = 'https://api.wheretheiss.at/v1/satellites/25544'
 
 
 
-
-
-const departureAirport = IATA.filter(obj => {
-  return obj.iata === "AMS"
-});
-
-const arrivalAirport = IATA.filter(obj => {
-  return obj.iata === "AGP"
-});
-
-const coordinates = {
-  departureAirport: departureAirport[0],
-  arrivalAirport: arrivalAirport[0]
-}
-
 // Maak een nieuwe express app
 const app = express()
 const http = createServer(app)
@@ -44,6 +29,22 @@ app.use(express.urlencoded({ extended: true }))
 
 // Maak een route voor de index
 app.get('/', (request, response) => {
+  let { departureAirportIATA } = request.query
+  let { arrivalAirportIATA } = request.query
+
+  const departureAirport = IATA.filter(obj => {
+    return obj.iata === departureAirportIATA
+  });
+  
+  const arrivalAirport = IATA.filter(obj => {
+    return obj.iata === arrivalAirportIATA
+  });
+  
+  const coordinates = {
+    departureAirport: departureAirport[0],
+    arrivalAirport: arrivalAirport[0]
+  }
+
   response.render('pages/index', { active: '/', coordinates: coordinates })
 })
 
