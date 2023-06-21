@@ -1,6 +1,7 @@
 @import url(tokens.css);
 @import url(../assets/fonts/Manrope/static/Manrope-Medium.ttf);
 @import url(../assets/fonts/Manrope/static/Manrope-Regular.ttf);
+@import url(../assets/fonts/Manrope/static/Manrope-ExtraBold.ttf);
 
 @font-face {
     font-family: "Manrope Medium";
@@ -12,6 +13,12 @@
     font-family: "Manrope Regular";
     font-style: normal;
     src: url(../assets/fonts/Manrope/static/Manrope-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Manrope ExtraBold";
+    font-style: normal;
+    src: url(../assets/fonts/Manrope/static/Manrope-ExtraBold.ttf) format("truetype");
 }
 
 /*
@@ -81,6 +88,10 @@ main {
 
 .arrivalAirportMarker {
     filter: hue-rotate(149deg) saturate(1.5);
+}
+
+.hide {
+    display: none;
 }
 
 /*
@@ -160,10 +171,38 @@ header nav img {
 /* List */
 
 #list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--small-size);
     background-color: var(--c-background);
-    padding: var(--sds-pax-size-50);
+    padding: var(--sds-pax-size-50) 0;
     overflow-y: auto;
 }
+
+#list .search {
+    display: flex;
+    flex-direction: column;
+    gap: var(--small-size);
+    position: sticky;
+    top: 0;
+    transform: translateY(-1rem);
+    background: white;
+    padding: var(--small-size);
+    box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.1);
+    width: 100%;
+    z-index: 3;
+}
+
+#list .search h1 {
+    font-family: Manrope ExtraBold;
+    font-size: 2.7rem;
+    font-weight: bolder;
+
+  background: -webkit-linear-gradient(var(--sds-pax-color-gradient-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 
 .dashboard #list {
     visibility: hidden;
@@ -183,6 +222,7 @@ header nav img {
     display: flex;
     flex-direction: column;
     gap: var(--sds-pax-size-50);
+    padding: var(--small-size);
 }
 
 .flights .flight {
@@ -254,6 +294,14 @@ header nav img {
     border-radius: var(--small-radius);
     color: white;
     background-color: var(--sds-pax-color-accent-350);
+}
+
+#searchbar {
+    width: 100%;
+    height: 3rem;
+    padding: var(--small-size);
+    border: var(--container-border);
+    border-radius: var(--small-radius);
 }
 
 /* Map */

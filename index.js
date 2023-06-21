@@ -9,10 +9,6 @@ import IATA from "./IATA.js";
 
 
 
-
-
-
-
 // Maak een nieuwe express app
 const app = express()
 const http = createServer(app)
@@ -62,11 +58,6 @@ app.get('/map', (request, response) => {
 
 
 
-
-
-
-// const schiphol_api = 'https://api.wheretheiss.at/v1/satellites/25544'
-
 const schipholAPI = await fetch("https://api.schiphol.nl/public-flights/flights?includedelays=false&page=0&sort=%2BscheduleTime&flightDirection=A", {
   mode: 'cors',
   headers: {
@@ -78,7 +69,6 @@ const schipholAPI = await fetch("https://api.schiphol.nl/public-flights/flights?
 });
 
 const schipholAPIData = await schipholAPI.json();
-// console.log(schipholAPIData);
 const slicedFlightsData = schipholAPIData.flights.slice(0, 20);
 console.log(slicedFlightsData[0].route.destinations[0])
 
@@ -89,14 +79,12 @@ ioServer.on('connection', () => {
 
 // Update vluchtgegevens naar alle clients met een terugkerende interval
 async function getFlights() {
-  // fetchJson(slicedFlightsData).then((data) => {
   ioServer.emit('update-flight', { data: slicedFlightsData })
-  // })
 }
 
 getFlights()
 
-setInterval(getFlights, 10000)
+setInterval(getFlights, 5000)
 
 // Start een http server op het ingestelde poortnummer en log de url
 http.listen(port, () => {

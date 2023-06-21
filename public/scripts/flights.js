@@ -22,10 +22,12 @@ function updateFlights(flights) {
 
             addFlightCard(arrivingFlightsList, flight)
 
+        } else {
+            let currentFlightCard = document.querySelector(`.flight[data-flightNumber="${flight.flightNumber}"]`)
+
+            currentFlightCard.querySelector('.status').innerHTML = flight.publicFlightState.flightStates[0]
+            currentFlightCard.querySelector('.information .time').innerHTML = `${flight.scheduleTime}, ${flight.scheduleDate}`
         }
-
-
-
 
     })
 
@@ -34,7 +36,7 @@ function updateFlights(flights) {
 function addFlightCard(flightDirectionList, flight) {
     flightDirectionList.insertAdjacentHTML('beforeend',
     `
-    <li class="flight" data-destinations="${flight.route.destinations[0]} data-flightNumber="${flight.flightNumber}">
+    <li class="flight" data-destinations="${flight.route.destinations[0]}" data-flightNumber="${flight.flightNumber}">
         <a href="?departureAirportIATA=AMS&arrivalAirportIATA=${flight.route.destinations[0]}"></a>
         <div class="content">
             <div>
@@ -42,7 +44,7 @@ function addFlightCard(flightDirectionList, flight) {
 
             <section class="information">
                 <h3>${flight.route.destinations[0]}</h3>
-                <p>${flight.scheduleTime}, ${flight.scheduleDate}</p>
+                <p class="time">${flight.scheduleTime}, ${flight.scheduleDate}</p>
                 <p>${flight.flightName} ${flight.prefixICAO}</p>
             </section>
 
@@ -56,5 +58,4 @@ function addFlightCard(flightDirectionList, flight) {
 `
 )
 flightsListContainments.push(flight.flightNumber)
-console.log(flight)
 }
