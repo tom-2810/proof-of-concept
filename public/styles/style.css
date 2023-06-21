@@ -36,6 +36,9 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+
+    font-size: 1.1rem;
+    font-weight: var(--sds-pax-font-weight-text-bold);
 }
 
 header {
@@ -133,7 +136,7 @@ header nav img {
     position: absolute;
     bottom: 0;
     /* width: ; */
-    width: 100dvw;
+    width: 100%;
     height: calc(100dvh - var(--xlarge-size));
 }
 
@@ -142,6 +145,7 @@ header nav img {
 #list {
     background-color: var(--c-background);
     padding: var(--sds-pax-size-50);
+    overflow-y: auto;
 }
 
 .dashboard #list {
@@ -217,7 +221,8 @@ header nav img {
     width: fit-content;
     padding: var(--sds-pax-size-30) var(--sds-pax-size-40);
     border-radius: var(--small-radius);
-    background-color: rgb(255, 240, 26);
+    color: white;
+    background-color: var(--sds-pax-color-accent-350);
 }
 
 /* Map */

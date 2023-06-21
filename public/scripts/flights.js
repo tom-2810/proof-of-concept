@@ -1,6 +1,6 @@
 let ioServer = io()
-let arrivingFligtsList = document.querySelector('#arrivingflights')
-let departingFligtsList = document.querySelector('#arrivingflights')
+let arrivingFlightsList = document.querySelector('#arrivingflights')
+let departingFlightsList = document.querySelector('#arrivingflights')
 let allFlights = document.querySelectorAll('.flight')
 let flightsListContainments = []
 // allFlights.forEach(flight => flightsListContainments.push(flight.getAttribute('data-flightNumber')))
@@ -20,7 +20,7 @@ function updateFlights(flights) {
 
         if (!flightsListContainments.includes(flight.flightNumber)) {
 
-            addFlightCard(arrivingFligtsList, flight)
+            addFlightCard(arrivingFlightsList, flight)
 
         }
 
@@ -34,22 +34,21 @@ function updateFlights(flights) {
 function addFlightCard(flightDirectionList, flight) {
     flightDirectionList.insertAdjacentHTML('beforeend',
     `
-    <li class="flight" data-flightNumber="${flight.flightNumber}">
+    <li class="flight" data-destinations="${flight.route.destinations[0]} data-flightNumber="${flight.flightNumber}">
         <a href="?departureAirportIATA=AMS&arrivalAirportIATA=${flight.route.destinations[0]}"></a>
         <div class="content">
             <div>
-            <p class="status">${flight.flightDirection}</p>
+            <p class="status">${flight.publicFlightState.flightStates[0]}</p>
 
             <section class="information">
-                <h3>${flight.flightName}</h3>
-                <p>11:20, 10 June</p>
-                <p>EJU 7839 easyJet Europe</p>
+                <h3>${flight.route.destinations[0]}</h3>
+                <p>${flight.scheduleTime}, ${flight.scheduleDate}</p>
+                <p>${flight.flightName} ${flight.prefixICAO}</p>
             </section>
 
                 <a href="#meer">> meer</a>
             </div>
             <div class="options">
-                <!-- <div class="flag">flag</div> -->
                 <div class="enter">-></div>
             </div>
         </div>
@@ -57,5 +56,5 @@ function addFlightCard(flightDirectionList, flight) {
 `
 )
 flightsListContainments.push(flight.flightNumber)
-console.log(flightsListContainments)
+console.log(flight)
 }

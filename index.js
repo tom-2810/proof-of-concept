@@ -67,7 +67,7 @@ app.get('/map', (request, response) => {
 
 // const schiphol_api = 'https://api.wheretheiss.at/v1/satellites/25544'
 
-const schipholAPI = await fetch("https://api.schiphol.nl/public-flights/flights?includedelays=false&page=0&sort=%2BscheduleTime", {
+const schipholAPI = await fetch("https://api.schiphol.nl/public-flights/flights?includedelays=false&page=0&sort=%2BscheduleTime&flightDirection=A", {
   mode: 'cors',
   headers: {
     "Accept": "application/json",
@@ -83,6 +83,7 @@ const slicedFlightsData = schipholAPIData.flights.slice(0, 20);
 console.log(slicedFlightsData[0].route.destinations[0])
 
 ioServer.on('connection', () => {
+  console.log("connecting")
   getFlights()
 })
 
