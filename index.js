@@ -2,6 +2,8 @@ import express, { json, request, response } from 'express'
 import { Server } from 'socket.io'
 import { createServer, get } from 'http'
 
+import { fetchJson, postJson } from './helpers/fetchWrapper.js'
+
 // IATA data over vlieghavens met hun coordinaten
 import IATA from "./IATA.js";
 
@@ -58,25 +60,15 @@ app.get('/map', (request, response) => {
   response.render('pages/map-page', { active: '/map' })
 })
 
-// function updateFlights() {
-//   // Verstuur het bericht naar alle clients
-//   ioServer.emit('update-flights', { flightsData: " terug" })
-// }
-
-// updateFlights()
-
-// setInterval(updateFlights, 2000)
-
 async function getFlights() {
-  const responseFlights = await fetch(schiphol_api)
-  const data = await responseFlights.json()
-
-  ioServer.emit('update-flights', { data })
+  fetchJson(schiphol_api).then((data) => {
+    ioServer.emit('update-flights', { data })
+  })
 }
 
 getFlights()
 
-setInterval(getFlights, 5000)
+setInterval(getFlights, 2000)
 
 // Start een http server op het ingestelde poortnummer en log de url
 http.listen(port, () => {
