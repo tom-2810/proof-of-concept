@@ -1,4 +1,18 @@
 @import url(tokens.css);
+@import url(../assets/fonts/Manrope/static/Manrope-Medium.ttf);
+@import url(../assets/fonts/Manrope/static/Manrope-Regular.ttf);
+
+@font-face {
+    font-family: "Manrope Medium";
+    font-style: normal;
+    src: url(../assets/fonts/Manrope/static/Manrope-Medium.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Manrope Regular";
+    font-style: normal;
+    src: url(../assets/fonts/Manrope/static/Manrope-Regular.ttf) format("truetype");
+}
 
 /*
 ===============================
@@ -37,8 +51,9 @@
     padding: 0;
     margin: 0;
 
+    font-family: Manrope Regular;
     font-size: 1.1rem;
-    font-weight: var(--sds-pax-font-weight-text-bold);
+    font-weight: 600;
 }
 
 header {
@@ -64,7 +79,9 @@ main {
     display: none !important;
 }
 
-.arrivalAirportMarker { filter: hue-rotate(149deg) saturate(1.5); }
+.arrivalAirportMarker {
+    filter: hue-rotate(149deg) saturate(1.5);
+}
 
 /*
 ===============================
@@ -78,7 +95,7 @@ header nav {
     display: flex;
     align-items: center;
     width: var(--default-width);
-    max-width: var(--max-width);
+    /* max-width: var(--max-width); */
 }
 
 header nav img {
@@ -173,7 +190,11 @@ header nav img {
     border-radius: var(--small-radius);
     border: var(--container-border);
     padding: var(--sds-pax-size-50);
+}
 
+.flights .flight:hover {
+    transform: scale(1.008);
+    transition: .1s;
 }
 
 .flights .flight .content {
@@ -184,7 +205,7 @@ header nav img {
 
 }
 
-.flights .flight > a:after {
+.flights .flight>a:after {
     content: '';
     position: absolute;
     height: 100%;
@@ -194,7 +215,7 @@ header nav img {
     z-index: 1;
 }
 
-.flights .flight .content > div {
+.flights .flight .content>div {
     display: flex;
     flex-direction: column;
     gap: var(--sds-pax-size-50);
@@ -215,6 +236,16 @@ header nav img {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.flights .flight .enter {
+    color: var(--sds-pax-color-accent-50);
+    font-size: 1.8rem;
+}
+
+
+.flights .flight:hover .enter {
+    animation: point .7s infinite alternate;
 }
 
 .flights .flight .content .status {
@@ -266,3 +297,36 @@ header nav img {
 🖥️ QUERIES
 ===============================
 */
+
+@media only screen and (min-width: 880px) {
+    main {
+        display: flex;
+        justify-content: center;
+    }
+
+    .dashboard {
+        display: grid;
+        grid-template-columns: 1fr 1.9fr;
+        width: 100%;
+    }
+
+    #list,
+    #map {
+        visibility: visible !important;
+        position: relative !important;
+        transform: translate(0) !important;
+    }
+    #list-map-switch {
+        display: none;
+    }
+}
+
+@keyframes point {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(.3em);
+    }
+}
