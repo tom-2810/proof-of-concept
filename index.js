@@ -9,7 +9,6 @@ import IATA from "./IATA.js";
 
 
 
-const schiphol_api = 'https://api.wheretheiss.at/v1/satellites/25544'
 
 
 
@@ -37,11 +36,11 @@ app.get('/', (request, response) => {
   const departureAirport = IATA.filter(obj => {
     return obj.iata === departureAirportIATA
   });
-  
+
   const arrivalAirport = IATA.filter(obj => {
     return obj.iata === arrivalAirportIATA
   });
-  
+
   const coordinates = {
     departureAirport: departureAirport[0],
     arrivalAirport: arrivalAirport[0]
@@ -60,15 +59,43 @@ app.get('/map', (request, response) => {
   response.render('pages/map-page', { active: '/map' })
 })
 
+
+
+
+
+
+
+// const schiphol_api = 'https://api.wheretheiss.at/v1/satellites/25544'
+
+const schipholAPI = await fetch("https://api.schiphol.nl/public-flights/flights?includedelays=false&page=0&sort=%2BscheduleTime", {
+  mode: 'cors',
+  headers: {
+    "Accept": "application/json",
+    "resourceversion": "v4",
+    "app_id": "1822ff3f",
+    "app_key": "3e9da2fd144c0ffaacc1bd575f4f39ab",
+  }
+});
+
+const schipholAPIData = await schipholAPI.json();
+// console.log(schipholAPIData);
+const slicedFlightsData = schipholAPIData.flights.slice(0, 20);
+console.log(slicedFlightsData[0].route.destinations[0])
+
+ioServer.on('connection', () => {
+  getFlights()
+})
+
+// Update vluchtgegevens naar alle clients met een terugkerende interval
 async function getFlights() {
-  fetchJson(schiphol_api).then((data) => {
-    ioServer.emit('update-flights', { data })
-  })
+  // fetchJson(slicedFlightsData).then((data) => {
+  ioServer.emit('update-flight', { data: slicedFlightsData })
+  // })
 }
 
 getFlights()
 
-setInterval(getFlights, 2000)
+setInterval(getFlights, 10000)
 
 // Start een http server op het ingestelde poortnummer en log de url
 http.listen(port, () => {
