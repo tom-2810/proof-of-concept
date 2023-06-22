@@ -3,9 +3,6 @@ let arrivingFlightsList = document.querySelector('#arrivingflights')
 let departingFlightsList = document.querySelector('#arrivingflights')
 let allFlights = document.querySelectorAll('.flight')
 let flightsListContainments = []
-// allFlights.forEach(flight => flightsListContainments.push(flight.getAttribute('data-flightNumber')))
-
-console.log(flightsListContainments)
 
 
 // Luister naar berichten van de server

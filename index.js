@@ -85,7 +85,7 @@ async function getFlights() {
 
 getFlights()
 
-setInterval(getFlights, 5000)
+setInterval(getFlights, 10000)
 
 // Start een http server op het ingestelde poortnummer en log de url
 http.listen(port, () => {

@@ -173,8 +173,7 @@ header nav img {
 #list {
     display: flex;
     flex-direction: column;
-    gap: var(--small-size);
-    background-color: var(--c-background);
+    background-color: #f3f7ff;
     padding: var(--sds-pax-size-50) 0;
     overflow-y: auto;
 }
@@ -185,10 +184,10 @@ header nav img {
     gap: var(--small-size);
     position: sticky;
     top: 0;
-    transform: translateY(-1rem);
+    transform: translateY(-.8rem);
     background: white;
-    padding: var(--small-size);
-    box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.1);
+    padding: calc(2* var(--sds-pax-size-50));
+    box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.04);
     width: 100%;
     z-index: 3;
 }
@@ -222,7 +221,7 @@ header nav img {
     display: flex;
     flex-direction: column;
     gap: var(--sds-pax-size-50);
-    padding: var(--small-size);
+    padding: var(--large-size) var(--small-size);
 }
 
 .flights .flight {
@@ -230,6 +229,7 @@ header nav img {
     border-radius: var(--small-radius);
     border: var(--container-border);
     padding: var(--sds-pax-size-50);
+    background-color: white;
 }
 
 .flights .flight:hover {
