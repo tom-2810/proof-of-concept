@@ -1,6 +1,7 @@
 import express, { json, request, response } from 'express'
 import { Server } from 'socket.io'
 import { createServer, get } from 'http'
+import fetch from 'node-fetch';
 
 import { fetchJson, postJson } from './helpers/fetchWrapper.js'
 
