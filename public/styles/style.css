@@ -192,6 +192,10 @@ header nav img {
     z-index: 3;
 }
 
+.state {
+    padding: 0 var(--small-size);
+}
+
 #list .search h1 {
     font-family: Manrope ExtraBold;
     font-size: 2.7rem;

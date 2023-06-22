@@ -6,7 +6,12 @@ let listMapSwitchButton = listMapSwitch.querySelector('button')
 let listComponent = document.querySelector('#list')
 let mapComponent = document.querySelector('#map')
 
+let flightsList = listComponent.querySelector('.flights')
+
 let searchBar = document.querySelector('#searchbar')
+let noContentState = document.querySelector('.state#no-content')
+
+console.log(noContentState)
 
 if (window.location.pathname == "/") {
     listMapSwitchLink.classList.toggle('js-disabled')
@@ -34,4 +39,6 @@ searchBar.addEventListener('input', () => {
     flightCards.forEach(flightCard => {
         !flightCard.innerHTML.toLowerCase().includes(input) ? flightCard.classList.add('hide') : flightCard.classList.remove('hide')
     })
+
+    flightsList.querySelectorAll('.flight.hide').length == flightsList.querySelectorAll('.flight').length ? noContentState.classList.remove('hide') : noContentState.classList.add('hide')
 })
