@@ -2,8 +2,7 @@
 
 # Schiphol
 
-Mijn opdrachtgever voor de komende drie weken is Schiphol.
-
+Amsterdam Airport Schiphol (IATA: AMS, ICAO: EHAM) is de grootste Nederlandse luchthaven en een belangrijke luchthaven in Europa. 
 https://www.schiphol.nl/nl/
 
 ## Inhoudsopgave
