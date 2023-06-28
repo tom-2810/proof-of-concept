@@ -61,12 +61,10 @@ Als gebruiker wil ik een visuele representatie van een geselecteerde vertrekkend
 
 ## Bronnen
 
-https://www.schiphol.nl/nl/
-https://github.com/tom-2810/Sprint12-POC-Schiphol#techniek
-https://www.schiphol.nl/en/developer-center/page/our-flight-api-explored/
+- https://www.schiphol.nl/nl/
+- https://github.com/tom-2810/Sprint12-POC-Schiphol#techniek
+- https://www.schiphol.nl/en/developer-center/page/our-flight-api-explored/
 
 ## Licentie
-
-This project is licensed under the terms of the [MIT license](./LICENSE).
 
 This project is licensed under the terms of the [MIT license](./LICENSE).
